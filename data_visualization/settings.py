@@ -39,7 +39,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)%so-uk)@sr7+(tt!-&r)!0x6d1%s8fglr1mbubv^2r-jhb5mk'
+SECRET_KEY = str(os.getenv('Django_Secret_key'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -104,10 +104,23 @@ WSGI_APPLICATION = 'data_visualization.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+"""
+#original with sqllight
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'visualize-ethiopia',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+                'host': str(os.getenv('Mongodb_Atlast_Url'))
+            }  
     }
 }
 

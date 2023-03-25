@@ -4,7 +4,7 @@ db.sqlite3
 __pycache__
 
 
-# i don't know where they are
+#the following items copyed,  i don't know where they are
 *.log
 *.pot
 *.pyc
