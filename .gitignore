@@ -1,0 +1,18 @@
+data_visualization/.env
+Ethiopia/src/
+db.sqlite3
+__pycache__
+
+
+# i don't know where they are
+*.log
+*.pot
+*.pyc
+media
+
+# pyenv 
+.python-version
+
+# Python # 
+*.py[cod] 
+*$py.class 
